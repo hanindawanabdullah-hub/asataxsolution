@@ -3,1062 +3,665 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jago Pajak | Konsultan Pajak Profesional</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>ASA TAX SOLUTION</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
-      background:#fff;
-      color:#333;
-      overflow-x:hidden;
+      font-family:'Poppins',sans-serif;
+      background:#081B33;
+      color:white;
     }
 
-    :root{
-      --orange:#ff7a00;
-      --yellow:#ffcc00;
-      --dark:#1d1d1d;
-      --light:#fff8ef;
-    }
-
-    header{
-      width:100%;
-      padding:18px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    nav{
       position:fixed;
       top:0;
-      z-index:999;
-      background:rgba(255,255,255,0.95);
+      width:100%;
+      background:rgba(8,27,51,.95);
       backdrop-filter:blur(10px);
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      border-bottom:1px solid rgba(255,255,255,.1);
+      z-index:999;
     }
 
-    .logo{
-      font-size:28px;
-      font-weight:700;
-      color:var(--orange);
+    .container{
+      width:90%;
+      max-width:1300px;
+      margin:auto;
     }
 
-    .logo span{
-      color:var(--yellow);
-    }
-
-    nav a{
-      margin-left:25px;
-      text-decoration:none;
-      color:#444;
-      font-weight:500;
-      transition:.3s;
-    }
-
-    nav a:hover{
-      color:var(--orange);
-    }
-
-    .hero{
-      min-height:100vh;
+    .navbar{
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      padding:120px 8% 60px;
-      background:linear-gradient(135deg,#fff,#fff7eb);
-      gap:40px;
-      flex-wrap:wrap;
+      align-items:center;
+      padding:20px 0;
     }
 
-    .hero-text{
-      flex:1;
-      min-width:320px;
+    .navbar img{
+      height:70px;
     }
 
-    .hero-text h1{
-      font-size:60px;
-      line-height:1.1;
-      margin-bottom:20px;
-      color:var(--dark);
-    }
-
-    .hero-text h1 span{
-      color:var(--orange);
-    }
-
-    .hero-text p{
-      font-size:18px;
-      line-height:1.8;
-      margin-bottom:30px;
-      color:#555;
-    }
-
-    .btn-group{
+    .menu{
       display:flex;
-      gap:15px;
-      flex-wrap:wrap;
+      gap:30px;
     }
 
-    .btn{
-      padding:15px 28px;
-      border:none;
-      border-radius:14px;
-      cursor:pointer;
-      font-size:16px;
-      font-weight:600;
+    .menu a{
       text-decoration:none;
+      color:#ddd;
+      font-size:14px;
       transition:.3s;
-      display:inline-block;
     }
 
-    .btn-primary{
-      background:linear-gradient(135deg,var(--orange),var(--yellow));
-      color:white;
-      box-shadow:0 10px 20px rgba(255,122,0,.25);
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-3px);
-    }
-
-    .btn-secondary{
-      background:white;
-      border:2px solid var(--orange);
-      color:var(--orange);
-    }
-
-    .hero-image{
-      flex:1;
-      min-width:320px;
-      display:flex;
-      justify-content:center;
-    }
-
-    .hero-card{
-      width:420px;
-      background:white;
-      border-radius:30px;
-      padding:35px;
-      box-shadow:0 20px 60px rgba(0,0,0,0.08);
-      border:1px solid #f2f2f2;
-    }
-
-    .hero-card h3{
-      margin-bottom:25px;
-      font-size:26px;
-      color:var(--orange);
-    }
-
-    .hero-card ul{
-      list-style:none;
-    }
-
-    .hero-card ul li{
-      margin-bottom:18px;
-      font-size:17px;
+    .menu a:hover{
+      color:#F5B942;
     }
 
     section{
-      padding:90px 8%;
+      padding:120px 0;
     }
 
-    .section-title{
-      text-align:center;
-      margin-bottom:50px;
+    .hero{
+      padding-top:180px;
     }
 
-    .section-title h2{
-      font-size:42px;
-      color:var(--dark);
-      margin-bottom:15px;
-    }
-
-    .section-title p{
-      color:#666;
-    }
-
-    .services{
+    .hero-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
     }
 
-    .service-card{
-      background:white;
-      border-radius:24px;
+    .hero h1{
+      font-size:65px;
+      line-height:1.1;
+      margin-bottom:25px;
+      font-weight:800;
+    }
+
+    .gold{
+      color:#F5B942;
+    }
+
+    .hero p{
+      color:#cfcfcf;
+      line-height:1.9;
+      margin-bottom:35px;
+      font-size:17px;
+    }
+
+    .btn{
+      background:#F5B942;
+      color:black;
+      padding:18px 35px;
+      border-radius:15px;
+      text-decoration:none;
+      font-weight:700;
+      display:inline-block;
+    }
+
+    .card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:30px;
       padding:35px;
-      transition:.3s;
-      border:1px solid #f1f1f1;
-      box-shadow:0 10px 25px rgba(0,0,0,0.04);
     }
 
-    .service-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 15px 35px rgba(255,122,0,.15);
-    }
-
-    .service-card h3{
-      color:var(--orange);
-      margin-bottom:15px;
-      font-size:24px;
-    }
-
-    .service-card p{
-      color:#666;
+    .chat-box{
+      height:320px;
+      overflow-y:auto;
       margin-bottom:20px;
+    }
+
+    .chat{
+      padding:15px;
+      border-radius:15px;
+      margin-bottom:15px;
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .bot{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .user{
+      background:#F5B942;
+      color:black;
+      margin-left:50px;
+    }
+
+    .chat-input{
+      display:flex;
+      gap:10px;
+    }
+
+    .chat-input input{
+      flex:1;
+      padding:16px;
+      border:none;
+      border-radius:15px;
+      background:rgba(255,255,255,.05);
+      color:white;
+    }
+
+    .chat-input button{
+      background:#F5B942;
+      border:none;
+      padding:16px 25px;
+      border-radius:15px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .title{
+      font-size:50px;
+      text-align:center;
+      margin-bottom:70px;
+      font-weight:800;
+    }
+
+    .about-grid,
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+    }
+
+    .about p{
+      color:#ccc;
+      line-height:2;
+      margin-bottom:20px;
+    }
+
+    .vision-card{
+      margin-bottom:25px;
+    }
+
+    .vision-card h3{
+      color:#F5B942;
+      margin-bottom:15px;
+      font-size:25px;
+    }
+
+    .culture-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+      margin-top:20px;
+    }
+
+    .culture{
+      background:rgba(245,185,66,.1);
+      border:1px solid rgba(245,185,66,.2);
+      padding:20px;
+      border-radius:20px;
+      display:flex;
+      gap:15px;
+      align-items:flex-start;
+    }
+
+    .culture span{
+      font-size:28px;
+    }
+
+    .culture p{
+      margin:0;
+      font-size:13px;
       line-height:1.7;
     }
 
-    .price{
-      font-size:28px;
-      font-weight:700;
-      color:var(--dark);
-      margin-bottom:20px;
-    }
-
-    .market{
-      background:linear-gradient(135deg,var(--orange),#ffb300);
-      border-radius:35px;
-      color:white;
-      text-align:center;
-      padding:70px 8%;
-      margin:0 8%;
-    }
-
-    .market h2{
-      font-size:42px;
-      margin-bottom:20px;
-    }
-
-    .market p{
-      font-size:18px;
-      max-width:850px;
-      margin:auto;
-      line-height:1.9;
-    }
-
-    .testimonials{
+    .services-grid,
+    .blog-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
     }
 
-    .testimonial{
-      background:#fff8ef;
+    .service{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
       padding:30px;
-      border-radius:24px;
+      border-radius:25px;
     }
 
-    .testimonial h4{
-      color:var(--orange);
-      margin-bottom:10px;
+    .service h3{
+      margin:20px 0;
+      font-size:20px;
     }
 
-    .chatbot{
-      background:white;
-      border-radius:30px;
-      padding:40px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.06);
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      align-items:center;
+    .service p{
+      color:#ccc;
+      line-height:1.8;
+      font-size:14px;
     }
 
-    .chatbot img{
-      width:100%;
+    .blog{
+      background:rgba(255,255,255,.05);
+      border-radius:25px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.1);
     }
 
-    .chatbox{
-      background:#fff8ef;
-      border-radius:20px;
+    .blog-img{
+      height:220px;
+      background:linear-gradient(135deg,#F5B94233,transparent);
+    }
+
+    .blog-content{
       padding:25px;
     }
 
-    .bot-message{
-      background:white;
-      padding:14px 18px;
-      border-radius:15px;
+    .blog h3{
       margin-bottom:15px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.05);
     }
 
-    .faq{
-      display:grid;
-      gap:20px;
+    .blog p{
+      color:#ccc;
+      line-height:1.8;
+      margin-bottom:20px;
+      font-size:14px;
     }
 
-    .faq-item{
-      background:white;
-      padding:25px;
-      border-radius:18px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    .read-btn{
+      background:#F5B942;
+      color:black;
+      padding:12px 20px;
+      border:none;
+      border-radius:12px;
+      font-weight:700;
+      cursor:pointer;
     }
 
-    footer{
-      background:#111;
-      color:white;
-      padding:50px 8%;
-      text-align:center;
-      margin-top:80px;
-    }
-
-    footer h3{
-      color:var(--yellow);
-      margin-bottom:15px;
-      font-size:28px;
-    }
-
-    .floating-wa{
+    .modal{
       position:fixed;
-      bottom:25px;
-      right:25px;
-      background:#25d366;
-      width:70px;
-      height:70px;
-      border-radius:50%;
-      display:flex;
+      inset:0;
+      background:rgba(0,0,0,.8);
+      display:none;
       justify-content:center;
       align-items:center;
-      text-decoration:none;
-      color:white;
-      font-size:32px;
-      box-shadow:0 10px 30px rgba(0,0,0,.2);
-      z-index:999;
+      z-index:9999;
+      padding:30px;
+    }
+
+    .modal-content{
+      background:#081B33;
+      max-width:800px;
+      width:100%;
+      padding:40px;
+      border-radius:30px;
+      border:1px solid rgba(255,255,255,.1);
+      max-height:90vh;
+      overflow-y:auto;
+    }
+
+    .close{
+      float:right;
+      cursor:pointer;
+      font-size:30px;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:15px 0;
+      color:#ccc;
     }
 
     @media(max-width:900px){
-      .hero{
-        flex-direction:column;
-      }
-
-      .hero-text h1{
-        font-size:42px;
-      }
-
-      .chatbot{
+      .hero-grid,
+      .about-grid,
+      .services-grid,
+      .blog-grid{
         grid-template-columns:1fr;
       }
 
-      nav{
+      .menu{
         display:none;
       }
+
+      .hero h1{
+        font-size:45px;
+      }
     }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Jago<span>Pajak</span></div>
+<nav>
+  <div class="container navbar">
+    <img src="logo.png" alt="ASA TAX">
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#layanan">Layanan</a>
-    <a href="#market">Market</a>
-    <a href="#ai">AI Chatbot</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
-</header>
-
-<section class="hero">
-
-  <div class="hero-text">
-    <h1>Konsultan <span>Pajak Modern</span> & Terpercaya</h1>
-
-    <p>
-      🔶 Jago Pajak <br><br>
-      💼 Berpengalaman terpercaya <br>
-      📄 Jasa NPWP • SPT • PKP • Konsultasi <br>
-      💬 Fast response & amanah
-    </p>
-
-    <div class="btn-group">
-      <a href="https://wa.me/6287831673591" class="btn btn-primary">
-        Konsultasi WA 1
-      </a>
-
-      <a href="https://wa.me/6288902943191" class="btn btn-secondary">
-        Konsultasi WA 2
-      </a>
+    <div class="menu">
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang Kami</a>
+      <a href="#services">Layanan</a>
+      <a href="#blog">Artikel</a>
+      <a href="#contact">Kontak</a>
     </div>
   </div>
+</nav>
 
-  <div class="hero-image">
-    <div class="hero-card">
-      <h3>Layanan Profesional</h3>
-
-      <ul>
-        <li>✅ Pembuatan NPWP</li>
-        <li>✅ Pelaporan SPT Tahunan</li>
-        <li>✅ Pengurusan PKP</li>
-        <li>✅ Konsultasi Pajak UMKM</li>
-        <li>✅ Pajak Badan Usaha</li>
-        <li>✅ Pendampingan Pemeriksaan</li>
-      </ul>
-    </div>
-  </div>
-
-</section>
-
-<section id="layanan">
-
-  <div class="section-title">
-    <h2>Layanan Kami</h2>
-    <p>Pelayanan pajak profesional dengan harga terjangkau</p>
-  </div>
-
-  <div class="services">
-
-    <div class="service-card">
-      <h3>NPWP</h3>
-      <p>Pembuatan dan aktivasi NPWP pribadi maupun perusahaan dengan proses cepat.</p>
-      <div class="price">Rp99K</div>
-      <a href="https://wa.me/6287831673591" class="btn btn-primary">Pesan Sekarang</a>
-    </div>
-
-    <div class="service-card">
-      <h3>SPT Tahunan</h3>
-      <p>Bantu lapor SPT tahunan pribadi maupun badan usaha tanpa ribet.</p>
-      <div class="price">Rp149K</div>
-      <a href="https://wa.me/6288902943191" class="btn btn-primary">Pesan Sekarang</a>
-    </div>
-
-    <div class="service-card">
-      <h3>Pengurusan PKP</h3>
-      <p>Legalitas PKP lengkap untuk bisnis dan perusahaan Anda.</p>
-      <div class="price">Rp499K</div>
-      <a href="https://wa.me/6287831673591" class="btn btn-primary">Pesan Sekarang</a>
-    </div>
-
-    <div class="service-card">
-      <h3>Konsultasi Pajak</h3>
-      <p>Konsultasi bisnis, UMKM, dan strategi perpajakan bersama ahli.</p>
-      <div class="price">Rp79K</div>
-      <a href="https://wa.me/6288902943191" class="btn btn-primary">Konsultasi</a>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="market" id="market">
-
-  <h2>Market & Target Client</h2>
-
-  <p>
-    Kami melayani berbagai kebutuhan perpajakan mulai dari UMKM, freelancer,
-    content creator, perusahaan startup, toko online, hingga badan usaha profesional.
-    Dengan sistem digital modern, proses konsultasi dan pengurusan pajak dapat dilakukan
-    secara online dengan cepat, aman, dan terpercaya.
-  </p>
-
-</section>
-
-<section>
-
-  <div class="section-title">
-    <h2>Testimoni Client</h2>
-    <p>Dipercaya oleh banyak client dari seluruh Indonesia</p>
-  </div>
-
-  <div class="testimonials">
-
-    <div class="testimonial">
-      <h4>Rizky - UMKM</h4>
-      <p>
-        “Pelayanannya cepat banget dan sangat membantu urusan SPT tahunan saya.”
-      </p>
-    </div>
-
-    <div class="testimonial">
-      <h4>Andini - Freelancer</h4>
-      <p>
-        “Admin fast response dan proses NPWP selesai dalam waktu singkat.”
-      </p>
-    </div>
-
-    <div class="testimonial">
-      <h4>Budi - Owner Startup</h4>
-      <p>
-        “Konsultasinya jelas dan profesional. Recommended untuk bisnis.”
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<section id="ai">
-
-  <div class="section-title">
-    <h2>AI Chatbot Pajak</h2>
-    <p>Chatbot AI untuk membantu pertanyaan perpajakan secara otomatis</p>
-  </div>
-
-  <div class="chatbot">
+<section class="hero" id="home">
+  <div class="container hero-grid">
 
     <div>
-      <h2 style="font-size:38px;margin-bottom:20px;color:#ff7a00;">
-        Smart Tax Assistant
+      <h1>
+        SOLUSI <span class="gold">PERPAJAKAN</span><br>
+        PERUSAHAAN ANDA
+      </h1>
+
+      <p>
+        ASA TAX SOLUTION adalah konsultan pajak profesional terpercaya
+        dengan pengalaman lebih dari 20 tahun dalam bidang perpajakan
+        dan akuntansi.
+      </p>
+
+      <a href="https://wa.me/6282136961885" class="btn">
+        Konsultasi Sekarang
+      </a>
+    </div>
+
+    <div class="card">
+      <h2 class="gold" style="margin-bottom:25px;">
+        ASA CHATBOT AI
       </h2>
 
-      <p style="line-height:1.9;color:#666;">
-        AI chatbot dapat menjawab pertanyaan tentang:
+      <div class="chat-box" id="chatBox">
+        <div class="chat bot">
+          Halo 👋 Saya ASA CHATBOT AI. Silakan tanyakan
+          seputar pajak, NPWP, PPN, SP2DK, dan layanan ASA TAX Solution.
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <input type="text" id="message" placeholder="Tanyakan sesuatu...">
+        <button onclick="sendChat()">Kirim</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+
+    <div class="about">
+      <h2 class="title" style="text-align:left;">
+        Tentang <span class="gold">Kami</span>
+      </h2>
+
+      <p>
+        CV Asa Tax Solution adalah perusahaan Konsultan Pajak dan Akuntansi
+        yang berlokasi di Kartasura, Sukoharjo, dan telah berdiri sejak 7 Januari 2005.
       </p>
 
-      <br>
-
-      <ul style="line-height:2;color:#444;">
-        <li>✅ Cara lapor SPT</li>
-        <li>✅ Cara membuat NPWP</li>
-        <li>✅ Konsultasi pajak UMKM</li>
-        <li>✅ Peraturan pajak terbaru</li>
-        <li>✅ Simulasi pajak bisnis</li>
-        <li>✅ FAQ perpajakan</li>
-      </ul>
-
-      <br>
-
-      <a href="https://wa.me/6287831673591" class="btn btn-primary">
-        Integrasi AI Sekarang
-      </a>
+      <p>
+        Dengan pengalaman dan keahlian yang dimiliki, CV Asa Tax Solution
+        hadir sebagai mitra terpercaya untuk membantu perusahaan mengelola
+        aspek keuangan dan perpajakan secara profesional.
+      </p>
     </div>
-
-    <div class="chatbox">
-
-      <div class="bot-message">
-        🤖 Halo, ada yang bisa saya bantu terkait pajak?
-      </div>
-
-      <div class="bot-message">
-        💬 Cara lapor SPT tahunan bagaimana?
-      </div>
-
-      <div class="bot-message">
-        🤖 Anda dapat menyiapkan EFIN dan bukti penghasilan terlebih dahulu.
-      </div>
-
-      <div class="bot-message">
-        💬 Berapa biaya pengurusan PKP?
-      </div>
-
-      <div class="bot-message">
-        🤖 Mulai dari Rp499.000 tergantung kebutuhan bisnis Anda.
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section>
-
-  <div class="section-title">
-    <h2>FAQ</h2>
-    <p>Pertanyaan yang sering ditanyakan</p>
-  </div>
-
-  <div class="faq">
-
-    <div class="faq-item">
-      <h3>Apakah konsultasi bisa online?</h3>
-      <p>Ya, seluruh layanan bisa dilakukan secara online via WhatsApp.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Berapa lama proses NPWP?</h3>
-      <p>Rata-rata proses 1-2 hari kerja tergantung data client.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Apakah data aman?</h3>
-      <p>Kami menjaga seluruh data client dengan sistem yang aman dan profesional.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<footer id="kontak">
-
-  <h3>Jago Pajak</h3>
-
-  <p>
-    Konsultan Pajak Profesional & Amanah
-  </p>
-
-  <br>
-
-  <p>📞 WA 1 : 087831673591</p>
-  <p>📞 WA 2 : 088902943191</p>
-
-  <br>
-
-  <p>© 2026 Jago Pajak. All Rights Reserved.</p>
-
-</footer>
-
-<a class="floating-wa" href="https://wa.me/6287831673591">
-  ☎
-</a>
-
-<script>
-  console.log("Website Jago Pajak Ready");
-</script>
-
-</body>
-<style>
-
-.ai-chat-toggle{
-  position:fixed;
-  bottom:110px;
-  right:25px;
-  width:75px;
-  height:75px;
-  border-radius:50%;
-  border:none;
-  cursor:pointer;
-  z-index:99999;
-  background:linear-gradient(135deg,#ff7a00,#ffcc00);
-  color:white;
-  font-size:34px;
-  box-shadow:0 15px 35px rgba(0,0,0,.25);
-  transition:.3s;
-}
-
-.ai-chat-toggle:hover{
-  transform:scale(1.08);
-}
-
-.ai-chat-container{
-  position:fixed;
-  bottom:110px;
-  right:25px;
-  width:400px;
-  height:650px;
-  background:white;
-  border-radius:30px;
-  overflow:hidden;
-  box-shadow:0 25px 60px rgba(0,0,0,.25);
-  z-index:999999;
-  display:none;
-  flex-direction:column;
-  animation:fadeIn .3s ease;
-  border:1px solid #eee;
-}
-
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.ai-header{
-  background:linear-gradient(135deg,#ff7a00,#ffcc00);
-  padding:22px;
-  color:white;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.ai-header h3{
-  font-size:24px;
-}
-
-.ai-status{
-  font-size:13px;
-  opacity:.9;
-}
-
-.close-ai{
-  background:none;
-  border:none;
-  color:white;
-  font-size:28px;
-  cursor:pointer;
-}
-
-.ai-body{
-  flex:1;
-  overflow-y:auto;
-  padding:20px;
-  background:#fff8ef;
-}
-
-.ai-message{
-  max-width:85%;
-  padding:15px 18px;
-  border-radius:20px;
-  margin-bottom:16px;
-  line-height:1.7;
-  font-size:15px;
-  animation:msg .2s ease;
-}
-
-@keyframes msg{
-  from{
-    opacity:0;
-    transform:translateY(10px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.bot{
-  background:white;
-  color:#333;
-  box-shadow:0 5px 15px rgba(0,0,0,.05);
-}
-
-.user{
-  background:linear-gradient(135deg,#ff7a00,#ffb300);
-  color:white;
-  margin-left:auto;
-}
-
-.ai-input{
-  padding:18px;
-  background:white;
-  display:flex;
-  gap:10px;
-  border-top:1px solid #eee;
-}
-
-.ai-input input{
-  flex:1;
-  padding:15px;
-  border-radius:16px;
-  border:1px solid #ddd;
-  outline:none;
-  font-size:15px;
-}
-
-.ai-input button{
-  padding:15px 20px;
-  border:none;
-  border-radius:16px;
-  background:linear-gradient(135deg,#ff7a00,#ffcc00);
-  color:white;
-  font-weight:600;
-  cursor:pointer;
-}
-
-.ai-suggestion{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:15px;
-}
-
-.ai-chip{
-  background:white;
-  padding:10px 15px;
-  border-radius:50px;
-  cursor:pointer;
-  font-size:13px;
-  box-shadow:0 3px 10px rgba(0,0,0,.05);
-  transition:.3s;
-}
-
-.ai-chip:hover{
-  background:#ff7a00;
-  color:white;
-}
-
-.typing{
-  display:flex;
-  gap:5px;
-  align-items:center;
-}
-
-.typing span{
-  width:8px;
-  height:8px;
-  background:#999;
-  border-radius:50%;
-  animation:blink 1s infinite;
-}
-
-.typing span:nth-child(2){
-  animation-delay:.2s;
-}
-
-.typing span:nth-child(3){
-  animation-delay:.4s;
-}
-
-@keyframes blink{
-  0%{opacity:.2}
-  50%{opacity:1}
-  100%{opacity:.2}
-}
-
-@media(max-width:500px){
-
-  .ai-chat-container{
-    width:95%;
-    right:2.5%;
-    height:85vh;
-    bottom:100px;
-  }
-
-}
-
-</style>
-
-<!-- CHAT BUTTON -->
-<button class="ai-chat-toggle" onclick="toggleAI()">
-  🤖
-</button>
-
-<!-- CHATBOT -->
-<div class="ai-chat-container" id="aiChat">
-
-  <div class="ai-header">
 
     <div>
-      <h3>AI Pajak Assistant</h3>
-      <div class="ai-status">
-        Online • Fast Response
+
+      <div class="card vision-card">
+        <h3>VISI</h3>
+        <p>
+          MENJADI KONSULTAN PAJAK YANG PROFESIONAL,
+          TERPERCAYA DAN HANDAL
+        </p>
       </div>
+
+      <div class="card vision-card">
+        <h3>MISI</h3>
+        <p>
+          MEMBERI EDUKASI, MEMBERI SOLUSI DAN BERKOMITMEN
+          DALAM PELAYANAN PERPAJAKAN
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="gold">BUDAYA KERJA</h3>
+
+        <div class="culture-grid">
+
+          <div class="culture">
+            <span>🕌</span>
+            <p>Basmallah & Hamdallah</p>
+          </div>
+
+          <div class="culture">
+            <span>📊</span>
+            <p>Disiplin Kerja</p>
+          </div>
+
+          <div class="culture">
+            <span>😊</span>
+            <p>Ramah & Smart</p>
+          </div>
+
+          <div class="culture">
+            <span>🤝</span>
+            <p>Kerjasama Tim</p>
+          </div>
+
+          <div class="culture">
+            <span>⚡</span>
+            <p>Cepat Tanggap</p>
+          </div>
+
+          <div class="culture">
+            <span>🔒</span>
+            <p>Kerahasiaan Klien</p>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
-    <button class="close-ai" onclick="toggleAI()">
-      ✕
-    </button>
-
   </div>
+</section>
 
-  <div class="ai-body" id="chatBody">
+<section id="services">
+  <div class="container">
 
-    <div class="ai-message bot">
-      👋 Halo! Saya AI Pajak Assistant.<br><br>
-      Saya bisa membantu pertanyaan tentang:
-      <br><br>
-      ✅ NPWP <br>
-      ✅ SPT Tahunan <br>
-      ✅ PKP <br>
-      ✅ Pajak UMKM <br>
-      ✅ Pajak Freelancer <br>
-      ✅ Konsultasi Pajak
-    </div>
+    <h2 class="title">
+      Layanan <span class="gold">Kami</span>
+    </h2>
 
-    <div class="ai-suggestion">
+    <div class="services-grid">
 
-      <div class="ai-chip" onclick="quickAsk('Cara membuat NPWP')">
-        Cara membuat NPWP
+      <div class="service">
+        <h3>Konsultasi Perpajakan</h3>
+        <p>
+          Memberikan solusi perpajakan profesional sesuai regulasi Indonesia.
+        </p>
       </div>
 
-      <div class="ai-chip" onclick="quickAsk('Cara lapor SPT')">
-        Cara lapor SPT
+      <div class="service">
+        <h3>Review Pajak</h3>
+        <p>
+          Memastikan laporan dan dokumen pajak sesuai ketentuan.
+        </p>
       </div>
 
-      <div class="ai-chip" onclick="quickAsk('Biaya pengurusan PKP')">
-        Biaya PKP
-      </div>
-
-      <div class="ai-chip" onclick="quickAsk('Pajak UMKM berapa persen')">
-        Pajak UMKM
+      <div class="service">
+        <h3>Tax Planning</h3>
+        <p>
+          Perencanaan pajak legal untuk efisiensi perusahaan.
+        </p>
       </div>
 
     </div>
 
   </div>
+</section>
 
-  <div class="ai-input">
+<section id="blog">
+  <div class="container">
 
-    <input 
-      type="text" 
-      id="userInput"
-      placeholder="Tulis pertanyaan..."
-      onkeypress="if(event.key==='Enter')sendMessage()"
-    >
+    <h2 class="title">
+      Artikel <span class="gold">Perpajakan</span>
+    </h2>
 
-    <button onclick="sendMessage()">
-      Kirim
-    </button>
+    <div class="blog-grid">
+
+      <div class="blog">
+        <div class="blog-img"></div>
+
+        <div class="blog-content">
+          <h3>Strategi Efisiensi Pajak</h3>
+
+          <p>
+            Strategi legal untuk efisiensi pajak perusahaan.
+          </p>
+
+          <button class="read-btn" onclick="openBlog(
+            'Strategi Efisiensi Pajak',
+            'Efisiensi pajak perusahaan dilakukan melalui tax planning legal dan kepatuhan perpajakan yang baik.'
+          )">
+            Baca Selengkapnya
+          </button>
+        </div>
+      </div>
+
+      <div class="blog">
+        <div class="blog-img"></div>
+
+        <div class="blog-content">
+          <h3>Cara Menghadapi SP2DK</h3>
+
+          <p>
+            Panduan menghadapi SP2DK dari DJP.
+          </p>
+
+          <button class="read-btn" onclick="openBlog(
+            'Cara Menghadapi SP2DK',
+            'SP2DK merupakan surat dari DJP yang memerlukan klarifikasi data perpajakan.'
+          )">
+            Baca Selengkapnya
+          </button>
+        </div>
+      </div>
+
+    </div>
 
   </div>
+</section>
 
+<section id="contact">
+  <div class="container card contact">
+
+    <h2 class="title">
+      Hubungi <span class="gold">Kami</span>
+    </h2>
+
+    <p>(0271) 7451358</p>
+    <p>+62 821-3696-1885</p>
+    <p>asataxs@gmail.com</p>
+    <p>
+      Jalan Perkutut No.17-A, Gonilan, Kartasura, Sukoharjo
+    </p>
+
+  </div>
+</section>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+
+    <span class="close" onclick="closeModal()">✕</span>
+
+    <h2 id="modalTitle" class="gold"></h2>
+
+    <p id="modalContent" style="margin-top:20px; line-height:2;"></p>
+
+  </div>
 </div>
 
 <script>
 
-const aiDatabase = {
+function sendChat(){
 
-  "npwp":
-  "📄 Untuk membuat NPWP, Anda perlu menyiapkan:\n\n✅ KTP\n✅ Email aktif\n✅ Nomor HP\n\nProses biasanya 1-2 hari kerja.",
+  let input = document.getElementById("message");
+  let message = input.value.toLowerCase();
 
-  "spt":
-  "🧾 Pelaporan SPT Tahunan dapat dilakukan online melalui DJP Online.\n\nDokumen yang dibutuhkan:\n\n✅ EFIN\n✅ Bukti penghasilan\n✅ NPWP",
+  if(message.trim() === "") return;
 
-  "pkp":
-  "🏢 Pengurusan PKP cocok untuk bisnis/perusahaan yang membutuhkan legalitas PPN.\n\n💰 Biaya mulai Rp499.000",
+  let chatBox = document.getElementById("chatBox");
 
-  "umkm":
-  "📊 Pajak UMKM umumnya dikenakan tarif final sesuai regulasi terbaru.\n\nKami dapat membantu simulasi dan konsultasinya.",
-
-  "freelancer":
-  "💻 Freelancer tetap wajib melaporkan penghasilan tahunan jika memenuhi ketentuan perpajakan.",
-
-  "harga":
-  "💰 Daftar layanan:\n\n✅ NPWP : Rp99K\n✅ SPT : Rp149K\n✅ PKP : Rp499K\n✅ Konsultasi : Rp79K",
-
-  "konsultasi":
-  "📞 Anda dapat konsultasi langsung melalui WhatsApp:\n\nWA 1 : 087831673591\nWA 2 : 088902943191",
-
-  "default":
-  "🤖 Maaf, pertanyaan belum ditemukan di database AI.\n\nSilakan konsultasi langsung via WhatsApp untuk bantuan lebih lanjut."
-};
-
-function toggleAI(){
-
-  const chat = document.getElementById("aiChat");
-
-  if(chat.style.display === "flex"){
-    chat.style.display = "none";
-  }else{
-    chat.style.display = "flex";
-  }
-
-}
-
-function addMessage(message,type){
-
-  const chatBody = document.getElementById("chatBody");
-
-  const div = document.createElement("div");
-
-  div.className = "ai-message " + type;
-
-  div.innerHTML = message.replace(/\n/g,"<br>");
-
-  chatBody.appendChild(div);
-
-  chatBody.scrollTop = chatBody.scrollHeight;
-
-}
-
-function showTyping(){
-
-  const chatBody = document.getElementById("chatBody");
-
-  const typing = document.createElement("div");
-
-  typing.className = "ai-message bot";
-
-  typing.id = "typing";
-
-  typing.innerHTML = `
-    <div class="typing">
-      <span></span>
-      <span></span>
-      <span></span>
+  chatBox.innerHTML += `
+    <div class="chat user">
+      ${message}
     </div>
   `;
 
-  chatBody.appendChild(typing);
+  let reply = "Tim ASA TAX Solution siap membantu kebutuhan perpajakan anda.";
 
-  chatBody.scrollTop = chatBody.scrollHeight;
-
-}
-
-function removeTyping(){
-
-  const typing = document.getElementById("typing");
-
-  if(typing){
-    typing.remove();
+  if(message.includes("npwp")){
+    reply = "Pengurusan NPWP memerlukan dokumen legalitas usaha dan identitas direktur.";
   }
 
-}
-
-function getAIResponse(text){
-
-  text = text.toLowerCase();
-
-  if(text.includes("npwp")){
-    return aiDatabase.npwp;
+  else if(message.includes("ppn")){
+    reply = "PPN adalah Pajak Pertambahan Nilai yang dikenakan pada transaksi barang dan jasa.";
   }
 
-  if(text.includes("spt")){
-    return aiDatabase.spt;
+  else if(message.includes("sp2dk")){
+    reply = "SP2DK adalah surat permintaan klarifikasi data perpajakan dari DJP.";
   }
 
-  if(text.includes("pkp")){
-    return aiDatabase.pkp;
+  else if(message.includes("restitusi")){
+    reply = "Restitusi pajak adalah pengembalian kelebihan pembayaran pajak.";
   }
 
-  if(text.includes("umkm")){
-    return aiDatabase.umkm;
-  }
+  setTimeout(() => {
 
-  if(text.includes("freelancer")){
-    return aiDatabase.freelancer;
-  }
+    chatBox.innerHTML += `
+      <div class="chat bot">
+        ${reply}
+        <br><br>
+        Untuk konsultasi lebih lanjut silakan hubungi WhatsApp:
+        <br>
+        <b>+62 821-3696-1885</b>
+      </div>
+    `;
 
-  if(text.includes("harga") || text.includes("biaya")){
-    return aiDatabase.harga;
-  }
+    chatBox.scrollTop = chatBox.scrollHeight;
 
-  if(text.includes("konsultasi") || text.includes("wa")){
-    return aiDatabase.konsultasi;
-  }
-
-  return aiDatabase.default;
-
-}
-
-function sendMessage(){
-
-  const input = document.getElementById("userInput");
-
-  const text = input.value.trim();
-
-  if(text === "") return;
-
-  addMessage(text,"user");
+  },500);
 
   input.value = "";
 
-  showTyping();
+}
 
-  setTimeout(()=>{
+function openBlog(title,content){
 
-    removeTyping();
-
-    const response = getAIResponse(text);
-
-    addMessage(response,"bot");
-
-  },1000);
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalContent").innerText = content;
 
 }
 
-function quickAsk(text){
+function closeModal(){
 
-  document.getElementById("userInput").value = text;
-
-  sendMessage();
+  document.getElementById("modal").style.display = "none";
 
 }
-
-console.log("AI Pajak Assistant Ready");
 
 </script>
+
+</body>
 </html>
