@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ASA TAX SOLUTION</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -18,103 +16,122 @@
       scroll-behavior:smooth;
     }
 
+    :root{
+      --primary:#e84e1b;
+      --secondary:#ff6b2c;
+      --light:#fff7f4;
+      --text:#2d2d2d;
+      --gray:#6b6b6b;
+      --border:#ececec;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+
     body{
       font-family:'Poppins',sans-serif;
-      background:#081B33;
-      color:white;
+      background:white;
+      color:var(--text);
       overflow-x:hidden;
     }
 
     .container{
       width:90%;
-      max-width:1300px;
+      max-width:1250px;
       margin:auto;
     }
+
+    /* NAVBAR */
 
     nav{
       position:fixed;
       top:0;
       width:100%;
-      z-index:999;
-      background:rgba(8,27,51,.95);
+      background:rgba(255,255,255,.95);
       backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid var(--border);
+      z-index:999;
     }
 
     .navbar{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:18px 0;
+      padding:16px 0;
     }
 
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:15px;
-    }
-
-    .logo img{
-      height:65px;
+    .navbar img{
+      height:62px;
     }
 
     .menu{
       display:flex;
-      gap:30px;
+      gap:35px;
+      align-items:center;
     }
 
     .menu a{
-      color:#ddd;
       text-decoration:none;
-      font-size:14px;
+      color:var(--text);
+      font-size:15px;
+      font-weight:500;
       transition:.3s;
     }
 
     .menu a:hover{
-      color:#F5B942;
+      color:var(--primary);
     }
+
+    /* SECTION */
 
     section{
-      padding:120px 0;
+      padding:110px 0;
     }
 
+    /* HERO */
+
     .hero{
-      padding-top:190px;
+      padding-top:180px;
+      background:
+      radial-gradient(circle at top right, #fff0ea 0%, transparent 35%);
     }
 
     .hero-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:60px;
+      gap:70px;
       align-items:center;
     }
 
     .hero h1{
       font-size:68px;
-      line-height:1.1;
-      margin-bottom:25px;
+      line-height:1.08;
+      margin-bottom:28px;
       font-weight:800;
+      color:#111;
     }
 
-    .gold{
-      color:#F5B942;
+    .highlight{
+      color:var(--primary);
     }
 
     .hero p{
-      color:#d1d1d1;
+      color:var(--gray);
       line-height:2;
       font-size:17px;
       margin-bottom:35px;
+      max-width:600px;
     }
 
     .btn{
-      background:#F5B942;
-      color:black;
-      text-decoration:none;
-      padding:18px 35px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:white;
+      padding:18px 34px;
       border-radius:16px;
+      text-decoration:none;
       font-weight:700;
-      display:inline-block;
+      box-shadow:0 10px 25px rgba(232,78,27,.2);
       transition:.3s;
     }
 
@@ -122,21 +139,68 @@
       transform:translateY(-3px);
     }
 
+    /* CARD */
+
     .card{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:30px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:28px;
       padding:35px;
+      box-shadow:var(--shadow);
     }
 
-    .chat-area{
-      height:340px;
+    /* FLOATING AI CHAT */
+
+    .floating-chat{
+      position:fixed;
+      bottom:30px;
+      right:30px;
+      width:380px;
+      z-index:9999;
+      animation:fadeIn .5s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .chat-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:20px;
+    }
+
+    .chat-header h2{
+      color:var(--primary);
+      font-size:22px;
+    }
+
+    .chat-status{
+      background:#e9fff0;
+      color:#00a63e;
+      font-size:12px;
+      padding:6px 12px;
+      border-radius:30px;
+      font-weight:600;
+    }
+
+    .chat-box{
+      height:300px;
       overflow-y:auto;
+      padding-right:5px;
       margin-bottom:20px;
     }
 
     .chat{
-      padding:15px;
+      padding:16px 18px;
       border-radius:18px;
       margin-bottom:15px;
       line-height:1.8;
@@ -144,65 +208,77 @@
     }
 
     .bot{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
+      background:#f7f7f7;
+      border:1px solid #ededed;
+      color:#444;
     }
 
     .user{
-      background:#F5B942;
-      color:black;
-      margin-left:60px;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:white;
+      margin-left:40px;
     }
 
     .chat-input{
       display:flex;
-      gap:12px;
+      gap:10px;
     }
 
     .chat-input input{
       flex:1;
       padding:16px;
-      border:none;
-      border-radius:15px;
-      background:rgba(255,255,255,.05);
-      color:white;
+      border:1px solid #ddd;
+      border-radius:14px;
       outline:none;
+      font-family:'Poppins',sans-serif;
+      font-size:14px;
+    }
+
+    .chat-input input:focus{
+      border-color:var(--primary);
     }
 
     .chat-input button{
-      background:#F5B942;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
       border:none;
-      border-radius:15px;
-      padding:0 25px;
+      color:white;
+      padding:16px 22px;
+      border-radius:14px;
       font-weight:700;
       cursor:pointer;
     }
 
-    .section-title{
-      font-size:52px;
+    /* TITLE */
+
+    .title{
+      font-size:50px;
       text-align:center;
       margin-bottom:70px;
       font-weight:800;
+      color:#111;
     }
+
+    /* ABOUT */
 
     .about-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:50px;
+      gap:60px;
+      align-items:start;
     }
 
     .about p{
-      color:#d2d2d2;
+      color:var(--gray);
       line-height:2;
       margin-bottom:20px;
     }
 
-    .info-card{
+    .vision-card{
       margin-bottom:25px;
     }
 
-    .info-card h3{
-      color:#F5B942;
+    .vision-card h3{
+      color:var(--primary);
       margin-bottom:15px;
       font-size:24px;
     }
@@ -215,9 +291,9 @@
     }
 
     .culture{
-      background:rgba(245,185,66,.08);
-      border:1px solid rgba(245,185,66,.15);
-      padding:18px;
+      background:var(--light);
+      border:1px solid #ffe1d4;
+      padding:20px;
       border-radius:20px;
       display:flex;
       gap:15px;
@@ -225,148 +301,147 @@
     }
 
     .culture span{
-      font-size:28px;
+      font-size:26px;
     }
 
     .culture p{
       margin:0;
-      font-size:13px;
+      font-size:14px;
+      color:#444;
       line-height:1.7;
     }
 
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:25px;
-    }
+    /* SERVICES */
 
-    .service{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:25px;
-      padding:30px;
-      transition:.3s;
-    }
-
-    .service:hover{
-      transform:translateY(-5px);
-      border-color:#F5B942;
-    }
-
-    .service-icon{
-      font-size:40px;
-      margin-bottom:20px;
-    }
-
-    .service h3{
-      margin-bottom:15px;
-      font-size:22px;
-    }
-
-    .service p{
-      color:#cfcfcf;
-      line-height:1.8;
-      font-size:14px;
-    }
-
+    .services-grid,
     .blog-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:25px;
     }
 
-    .blog{
-      background:rgba(255,255,255,.05);
-      border-radius:25px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
+    .service{
+      background:white;
+      border:1px solid var(--border);
+      padding:35px;
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      transition:.3s;
     }
 
-    .blog-image{
+    .service:hover{
+      transform:translateY(-6px);
+    }
+
+    .service h3{
+      margin-bottom:18px;
+      font-size:22px;
+      color:var(--primary);
+    }
+
+    .service p{
+      color:var(--gray);
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    /* BLOG */
+
+    .blog{
+      background:white;
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .blog-img{
       height:220px;
-      background:linear-gradient(135deg,#F5B94244,transparent);
+      background:
+      linear-gradient(135deg,#ffefe8,#ffd6c7);
     }
 
     .blog-content{
-      padding:25px;
+      padding:28px;
     }
 
     .blog h3{
       margin-bottom:15px;
-      font-size:24px;
+      color:#111;
     }
 
     .blog p{
-      color:#d1d1d1;
-      line-height:1.8;
-      margin-bottom:20px;
+      color:var(--gray);
+      line-height:1.9;
+      margin-bottom:22px;
       font-size:14px;
     }
 
     .read-btn{
-      background:#F5B942;
-      border:none;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:white;
       padding:12px 20px;
+      border:none;
       border-radius:12px;
       font-weight:700;
       cursor:pointer;
-      margin-bottom:20px;
     }
 
-    .source{
-      border-top:1px solid rgba(255,255,255,.08);
-      padding-top:15px;
-      color:#9e9e9e;
-      font-size:13px;
-      line-height:1.7;
-    }
+    /* MODAL */
 
     .modal{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,.8);
+      background:rgba(0,0,0,.7);
       display:none;
       justify-content:center;
       align-items:center;
+      z-index:99999;
       padding:30px;
-      z-index:9999;
     }
 
     .modal-content{
-      background:#081B33;
-      max-width:850px;
+      background:white;
+      max-width:800px;
       width:100%;
-      border-radius:30px;
       padding:40px;
-      border:1px solid rgba(255,255,255,.08);
+      border-radius:30px;
       max-height:90vh;
       overflow-y:auto;
+      box-shadow:0 20px 60px rgba(0,0,0,.2);
     }
 
     .close{
       float:right;
-      font-size:30px;
       cursor:pointer;
+      font-size:30px;
+      color:var(--primary);
     }
+
+    /* CONTACT */
 
     .contact{
       text-align:center;
+      background:linear-gradient(135deg,#fff7f4,#fff);
     }
 
     .contact p{
       margin:15px 0;
-      color:#d1d1d1;
+      color:#555;
+      font-size:16px;
     }
 
     footer{
       text-align:center;
       padding:30px;
-      border-top:1px solid rgba(255,255,255,.08);
-      color:#aaa;
+      border-top:1px solid var(--border);
+      color:#777;
       font-size:14px;
     }
 
-    @media(max-width:900px){
+    /* MOBILE */
+
+    @media(max-width:1000px){
 
       .hero-grid,
       .about-grid,
@@ -375,16 +450,18 @@
         grid-template-columns:1fr;
       }
 
-      .menu{
-        display:none;
-      }
-
       .hero h1{
         font-size:48px;
       }
 
-      .section-title{
-        font-size:40px;
+      .menu{
+        display:none;
+      }
+
+      .floating-chat{
+        width:92%;
+        right:4%;
+        bottom:20px;
       }
 
     }
@@ -394,12 +471,12 @@
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
   <div class="container navbar">
 
-    <div class="logo">
-      <img src="logo.png" alt="ASA TAX">
-    </div>
+    <img src="logo.png" alt="ASA TAX">
 
     <div class="menu">
       <a href="#home">Beranda</a>
@@ -412,6 +489,8 @@
   </div>
 </nav>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
 
   <div class="container hero-grid">
@@ -419,14 +498,15 @@
     <div>
 
       <h1>
-        SOLUSI <span class="gold">PERPAJAKAN</span><br>
-        PERUSAHAAN ANDA
+        SOLUSI <span class="highlight">PERPAJAKAN</span><br>
+        PROFESIONAL<br>
+        UNTUK BISNIS ANDA
       </h1>
 
       <p>
         ASA TAX SOLUTION adalah konsultan pajak profesional terpercaya
-        dengan pengalaman lebih dari 20 tahun dalam bidang perpajakan,
-        akuntansi dan legalitas bisnis perusahaan.
+        dengan pengalaman lebih dari 20 tahun dalam bidang perpajakan
+        dan akuntansi perusahaan.
       </p>
 
       <a href="https://wa.me/6282136961885" class="btn">
@@ -437,24 +517,15 @@
 
     <div class="card">
 
-      <h2 class="gold" style="margin-bottom:25px;">
-        ASA CHATBOT AI
+      <h2 style="font-size:34px; margin-bottom:20px;">
+        Konsultan Pajak Modern & Profesional
       </h2>
 
-      <div class="chat-area" id="chatArea">
-
-        <div class="chat bot">
-          Halo 👋 Saya ASA CHATBOT AI.
-          Silakan tanyakan seputar pajak, NPWP, SP2DK,
-          restitusi pajak, tax planning dan layanan ASA TAX Solution.
-        </div>
-
-      </div>
-
-      <div class="chat-input">
-        <input type="text" id="message" placeholder="Tanyakan sesuatu...">
-        <button onclick="sendChat()">Kirim</button>
-      </div>
+      <p style="color:#666; line-height:2;">
+        Membantu perusahaan dalam pengelolaan perpajakan,
+        tax planning, review pajak, dan pendampingan pemeriksaan
+        secara profesional dan terpercaya.
+      </p>
 
     </div>
 
@@ -462,14 +533,16 @@
 
 </section>
 
+<!-- ABOUT -->
+
 <section id="about">
 
   <div class="container about-grid">
 
     <div class="about">
 
-      <h2 class="section-title" style="text-align:left;">
-        Tentang <span class="gold">Kami</span>
+      <h2 class="title" style="text-align:left;">
+        Tentang <span class="highlight">Kami</span>
       </h2>
 
       <p>
@@ -478,42 +551,40 @@
       </p>
 
       <p>
-        Sejak awal perjalanannya, CV Asa Tax Solution konsisten memberikan
-        layanan konsultasi kepada berbagai jenis perusahaan manufaktur,
-        konstruksi, retail, perdagangan umum, jasa, developer,
-        provider hingga sektor usaha lainnya.
-      </p>
-
-      <p>
-        Dengan pengalaman dan keahlian yang dimiliki,
-        CV Asa Tax Solution hadir sebagai mitra terpercaya
-        untuk membantu perusahaan mengelola aspek keuangan
-        dan perpajakan secara profesional.
+        Dengan pengalaman dan keahlian yang dimiliki, CV Asa Tax Solution
+        hadir sebagai mitra terpercaya untuk membantu perusahaan mengelola
+        aspek keuangan dan perpajakan secara profesional.
       </p>
 
     </div>
 
     <div>
 
-      <div class="card info-card">
+      <div class="card vision-card">
+
         <h3>VISI</h3>
+
         <p>
-          MENJADI KONSULTAN PAJAK YANG PROFESIONAL,
-          TERPERCAYA DAN HANDAL
+          Menjadi konsultan pajak yang profesional,
+          terpercaya dan handal.
         </p>
+
       </div>
 
-      <div class="card info-card">
+      <div class="card vision-card">
+
         <h3>MISI</h3>
+
         <p>
-          MEMBERI EDUKASI, MEMBERI SOLUSI DAN BERKOMITMEN
-          DALAM PELAYANAN PERPAJAKAN
+          Memberi edukasi, solusi, dan berkomitmen
+          dalam pelayanan perpajakan.
         </p>
+
       </div>
 
       <div class="card">
 
-        <h3 class="gold">BUDAYA KERJA</h3>
+        <h3 class="highlight">Budaya Kerja</h3>
 
         <div class="culture-grid">
 
@@ -557,68 +628,46 @@
 
 </section>
 
+<!-- SERVICES -->
+
 <section id="services">
 
   <div class="container">
 
-    <h2 class="section-title">
-      Layanan <span class="gold">Kami</span>
+    <h2 class="title">
+      Layanan <span class="highlight">Kami</span>
     </h2>
 
     <div class="services-grid">
 
       <div class="service">
-        <div class="service-icon">💼</div>
+
         <h3>Konsultasi Perpajakan</h3>
+
         <p>
-          Memberikan solusi perpajakan profesional
-          sesuai regulasi perpajakan Indonesia.
+          Memberikan solusi perpajakan profesional sesuai regulasi Indonesia.
         </p>
+
       </div>
 
       <div class="service">
-        <div class="service-icon">📑</div>
+
         <h3>Review Pajak</h3>
+
         <p>
-          Memastikan laporan dan dokumen perpajakan
-          sesuai ketentuan yang berlaku.
+          Memastikan laporan dan dokumen pajak sesuai ketentuan.
         </p>
+
       </div>
 
       <div class="service">
-        <div class="service-icon">📊</div>
+
         <h3>Tax Planning</h3>
-        <p>
-          Perencanaan pajak legal untuk efisiensi
-          keuangan perusahaan.
-        </p>
-      </div>
 
-      <div class="service">
-        <div class="service-icon">🧾</div>
-        <h3>Restitusi Pajak</h3>
         <p>
-          Membantu proses pengembalian pajak
-          secara profesional dan aman.
+          Perencanaan pajak legal untuk efisiensi perusahaan.
         </p>
-      </div>
 
-      <div class="service">
-        <div class="service-icon">🏢</div>
-        <h3>Pendirian Usaha</h3>
-        <p>
-          Membantu legalitas dan pendirian usaha
-          perusahaan secara lengkap.
-        </p>
-      </div>
-
-      <div class="service">
-        <div class="service-icon">⚖️</div>
-        <h3>Pendampingan SP2DK</h3>
-        <p>
-          Pendampingan pemeriksaan dan konsultasi
-          perpajakan profesional.
-        </p>
       </div>
 
     </div>
@@ -627,19 +676,21 @@
 
 </section>
 
+<!-- BLOG -->
+
 <section id="blog">
 
   <div class="container">
 
-    <h2 class="section-title">
-      Artikel <span class="gold">Perpajakan</span>
+    <h2 class="title">
+      Artikel <span class="highlight">Perpajakan</span>
     </h2>
 
     <div class="blog-grid">
 
       <div class="blog">
 
-        <div class="blog-image"></div>
+        <div class="blog-img"></div>
 
         <div class="blog-content">
 
@@ -649,17 +700,12 @@
             Strategi legal untuk efisiensi pajak perusahaan.
           </p>
 
-          <button class="read-btn"
-            onclick="openBlog(
-              'Strategi Efisiensi Pajak',
-              'Efisiensi pajak perusahaan dapat dilakukan melalui tax planning yang legal dan sesuai regulasi perpajakan Indonesia.'
-            )">
+          <button class="read-btn" onclick="openBlog(
+            'Strategi Efisiensi Pajak',
+            'Efisiensi pajak perusahaan dilakukan melalui tax planning legal dan kepatuhan perpajakan yang baik.'
+          )">
             Baca Selengkapnya
           </button>
-
-          <div class="source">
-            Sumber: Direktorat Jenderal Pajak Republik Indonesia
-          </div>
 
         </div>
 
@@ -667,7 +713,7 @@
 
       <div class="blog">
 
-        <div class="blog-image"></div>
+        <div class="blog-img"></div>
 
         <div class="blog-content">
 
@@ -677,45 +723,12 @@
             Panduan menghadapi SP2DK dari DJP.
           </p>
 
-          <button class="read-btn"
-            onclick="openBlog(
-              'Cara Menghadapi SP2DK',
-              'SP2DK merupakan surat dari DJP yang memerlukan klarifikasi data perpajakan dan pendampingan profesional.'
-            )">
+          <button class="read-btn" onclick="openBlog(
+            'Cara Menghadapi SP2DK',
+            'SP2DK merupakan surat dari DJP yang memerlukan klarifikasi data perpajakan.'
+          )">
             Baca Selengkapnya
           </button>
-
-          <div class="source">
-            Sumber: PMK dan Peraturan Perpajakan Indonesia
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="blog">
-
-        <div class="blog-image"></div>
-
-        <div class="blog-content">
-
-          <h3>Pentingnya Tax Planning</h3>
-
-          <p>
-            Pentingnya tax planning untuk bisnis modern.
-          </p>
-
-          <button class="read-btn"
-            onclick="openBlog(
-              'Pentingnya Tax Planning',
-              'Tax planning membantu perusahaan mengelola kewajiban pajak secara efisien dan legal.'
-            )">
-            Baca Selengkapnya
-          </button>
-
-          <div class="source">
-            Sumber: UU Harmonisasi Peraturan Perpajakan
-          </div>
 
         </div>
 
@@ -727,30 +740,66 @@
 
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact">
 
   <div class="container card contact">
 
-    <h2 class="section-title">
-      Hubungi <span class="gold">Kami</span>
+    <h2 class="title">
+      Hubungi <span class="highlight">Kami</span>
     </h2>
 
     <p>(0271) 7451358</p>
     <p>+62 821-3696-1885</p>
     <p>asataxs@gmail.com</p>
-
-    <p>
-      Jalan Perkutut No.17-A, Gonilan,
-      Kartasura, Sukoharjo
-    </p>
+    <p>Jalan Perkutut No.17-A, Gonilan, Kartasura, Sukoharjo</p>
 
   </div>
 
 </section>
 
-<footer>
-  © 2026 ASA TAX SOLUTION — Professional Tax Consultant
-</footer>
+<!-- FLOATING CHATBOT -->
+
+<div class="floating-chat">
+
+  <div class="card">
+
+    <div class="chat-header">
+
+      <h2>ASA CHATBOT AI</h2>
+
+      <div class="chat-status">
+        Online
+      </div>
+
+    </div>
+
+    <div class="chat-box" id="chatBox">
+
+      <div class="chat bot">
+        Halo 👋 Saya ASA CHATBOT AI.
+        Silakan tanyakan seputar pajak,
+        NPWP, PPN, SP2DK, dan layanan ASA TAX Solution.
+      </div>
+
+    </div>
+
+    <div class="chat-input">
+
+      <input type="text" id="message" placeholder="Tanyakan sesuatu...">
+
+      <button onclick="sendChat()">
+        Kirim
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- MODAL -->
 
 <div class="modal" id="modal">
 
@@ -758,64 +807,56 @@
 
     <span class="close" onclick="closeModal()">✕</span>
 
-    <h2 id="modalTitle" class="gold"></h2>
+    <h2 id="modalTitle" class="highlight"></h2>
 
-    <p id="modalText" style="margin-top:25px; line-height:2;"></p>
+    <p id="modalContent" style="margin-top:20px; line-height:2;"></p>
 
   </div>
 
 </div>
+
+<footer>
+  © 2026 ASA TAX SOLUTION — Professional Tax Consultant
+</footer>
 
 <script>
 
 function sendChat(){
 
   let input = document.getElementById("message");
-  let text = input.value;
+  let message = input.value.toLowerCase();
 
-  if(text.trim() === "") return;
+  if(message.trim() === "") return;
 
-  let lower = text.toLowerCase();
+  let chatBox = document.getElementById("chatBox");
 
-  let chatArea = document.getElementById("chatArea");
-
-  chatArea.innerHTML += `
+  chatBox.innerHTML += `
     <div class="chat user">
-      ${text}
+      ${message}
     </div>
   `;
 
-  let reply =
-    "Tim ASA TAX Solution siap membantu kebutuhan perpajakan anda.";
+  let reply = "Tim ASA TAX Solution siap membantu kebutuhan perpajakan anda.";
 
-  if(lower.includes("npwp")){
-    reply =
-      "Pengurusan NPWP perusahaan memerlukan dokumen legalitas usaha dan identitas direktur.";
+  if(message.includes("npwp")){
+    reply = "Pengurusan NPWP memerlukan dokumen legalitas usaha dan identitas direktur.";
   }
 
-  else if(lower.includes("ppn")){
-    reply =
-      "PPN adalah Pajak Pertambahan Nilai yang dikenakan pada transaksi barang dan jasa.";
+  else if(message.includes("ppn")){
+    reply = "PPN adalah Pajak Pertambahan Nilai yang dikenakan pada transaksi barang dan jasa.";
   }
 
-  else if(lower.includes("sp2dk")){
-    reply =
-      "SP2DK adalah surat klarifikasi data perpajakan dari DJP.";
+  else if(message.includes("sp2dk")){
+    reply = "SP2DK adalah surat permintaan klarifikasi data perpajakan dari DJP.";
   }
 
-  else if(lower.includes("restitusi")){
-    reply =
-      "Restitusi pajak adalah pengembalian kelebihan pembayaran pajak.";
-  }
-
-  else if(lower.includes("tax")){
-    reply =
-      "Tax planning membantu perusahaan mengelola kewajiban pajak secara efisien.";
+  else if(message.includes("restitusi")){
+    reply = "Restitusi pajak adalah pengembalian kelebihan pembayaran pajak.";
   }
 
   setTimeout(() => {
 
-    chatArea.innerHTML += `
+    chatBox.innerHTML += `
       <div class="chat bot">
         ${reply}
         <br><br>
@@ -825,7 +866,7 @@ function sendChat(){
       </div>
     `;
 
-    chatArea.scrollTop = chatArea.scrollHeight;
+    chatBox.scrollTop = chatBox.scrollHeight;
 
   },500);
 
@@ -833,11 +874,11 @@ function sendChat(){
 
 }
 
-function openBlog(title,text){
+function openBlog(title,content){
 
   document.getElementById("modal").style.display = "flex";
   document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalText").innerText = text;
+  document.getElementById("modalContent").innerText = content;
 
 }
 
